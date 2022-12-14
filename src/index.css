@@ -10,6 +10,7 @@
 
 :root {
 	--navbar-height: 90px;
+	--active: #5c5ced;
 }
 
 body,
@@ -23,4 +24,12 @@ body {
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.input-container:focus-within {
+	border: 2px solid var(--active);
+}
+
+.input-container:focus-within svg {
+	fill: var(--active);
 }
