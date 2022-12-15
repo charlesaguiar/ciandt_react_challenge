@@ -2,11 +2,12 @@ import { useMemo } from 'react';
 import { useQuery } from 'react-query';
 
 import { useAuthContext } from '../contexts/AuthContext';
-import getPokemonsDataFromApi from '../services/PokemonService';
+import { getPokemonsDataFromApi } from '../services/PokemonService';
 
 import Loading from '../components/Loading';
 import Breadcrumbs from '../components/Breadcrumbs';
 import PokemonsList from '../components/Pokemon/PokemonsList';
+import MyPokemonsCharts from '../components/Pokemon/Charts';
 
 export default function MyPokemons() {
 	const { trainer } = useAuthContext();
@@ -44,7 +45,7 @@ export default function MyPokemons() {
 					/>
 				</div>
 				<div className="flex flex-col gap-4 w-full h-full">
-					<div>Charts</div>
+					<MyPokemonsCharts myPokemons={myPokemons} />
 				</div>
 			</div>
 		</>
