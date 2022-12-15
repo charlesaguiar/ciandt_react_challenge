@@ -1,18 +1,21 @@
-import { useState, useMemo } from 'react';
 import { useQuery } from 'react-query';
 import { MdSearch } from 'react-icons/md';
 
-import getPokemonsDataFromApi from '../services/PokemonService';
 import { useAuthContext } from '../contexts/AuthContext';
+import usePagination from '../hooks/usePagination';
+import useSearch from '../hooks/useSearch';
+
+import getPokemonsDataFromApi from '../services/PokemonService';
 
 import Loading from '../components/Loading';
 import Input from '../components/Input';
 import Title from '../components/Title';
 import PokemonsList from '../components/PokemonsList';
+import Pagination from '../components/Pagination';
+
+import { TOTAL_POKEMONS } from '../constants';
 
 export default function Home() {
-	const [query, setQuery] = useState('');
-
 	const { trainer } = useAuthContext();
 
 	const { isLoading, data } = useQuery({
@@ -20,12 +23,17 @@ export default function Home() {
 		queryFn: () => getPokemonsDataFromApi(),
 	});
 
-	const filteredPokemons = useMemo(() => {
-		if (!query) return data?.results || [];
-		return data?.results?.filter((pokemon) =>
-			pokemon.name.includes(query.toLowerCase())
-		);
-	}, [query, data]);
+	const { query, setQuery, filteredData } = useSearch(
+		'name',
+		data?.results || []
+	);
+
+	const { paginatedData, page, setPage } = usePagination(filteredData);
+
+	const handleInputValueChange = (e) => {
+		setQuery(e.target.value);
+		setPage(0);
+	};
 
 	if (isLoading) {
 		return <Loading size={300} />;
@@ -43,10 +51,11 @@ export default function Home() {
 					className="min-w-[300px]"
 					startIcon={<MdSearch size={28} className="text-gray-500" />}
 					value={query}
-					onChange={(e) => setQuery(e.target.value)}
+					onChange={handleInputValueChange}
 				/>
 			</div>
-			<PokemonsList pokemons={filteredPokemons.slice(0, 20)} />
+			<PokemonsList pokemons={paginatedData} />
+			<Pagination page={page} setPage={setPage} totalItems={TOTAL_POKEMONS} />
 		</>
 	);
 }

@@ -12,7 +12,7 @@ export default function Navbar() {
 	const { signOut } = useAuthContext();
 
 	return (
-		<header>
+		<header className="inline-block sticky top-0 z-10 w-full bg-gray-50">
 			<nav className="flex items-center justify-between shadow-lg h-nav px-4 md:px-6 lg:px-8">
 				<Link to="/">
 					<div className="flex gap-4 items-center">
