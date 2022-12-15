@@ -9,8 +9,8 @@ import getPokemonsDataFromApi from '../services/PokemonService';
 
 import Loading from '../components/Loading';
 import Input from '../components/Input';
-import Title from '../components/Title';
-import PokemonsList from '../components/PokemonsList';
+import Title from '../components/Typography/Title';
+import PokemonsList from '../components/Pokemon/PokemonsList';
 import Pagination from '../components/Pagination';
 
 import { TOTAL_POKEMONS } from '../constants';

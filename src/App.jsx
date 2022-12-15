@@ -8,6 +8,7 @@ import { useAuthContext } from './contexts/AuthContext';
 
 import Layout from './layouts/Layout';
 import Home from './pages/Home';
+import PokemonDetails from './pages/PokemonDetails';
 import SignIn from './pages/SignIn';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
 				{isAuthenticated ? (
 					<Route path="/" element={<Layout />}>
 						<Route path="" element={<Home />} />
+						<Route path="/pokemon/:pokemon" element={<PokemonDetails />} />
 						<Route path="*" element={<Navigate to="/" />} />
 					</Route>
 				) : (
