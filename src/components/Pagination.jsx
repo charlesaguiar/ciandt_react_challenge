@@ -6,7 +6,7 @@ export default function Pagination({
 	page,
 	setPage,
 	totalItems,
-	itemsPerPage = 20,
+	itemsPerPage,
 	scrollToTopOnPageChange = true,
 }) {
 	const onPageChange = useCallback((newPage) => {

@@ -1,5 +1,9 @@
+import { MdStar } from 'react-icons/md';
 import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
+
+import useCatchPokemon from '../../hooks/useCatchPokemon';
+
 import getPokemonsDataFromApi from '../../services/PokemonService';
 
 import Divider from '../Divider';
@@ -11,15 +15,19 @@ export default function PokemonCard({ pokemon }) {
 		queryFn: () => getPokemonsDataFromApi(pokemon.url),
 	});
 
+	const { isPokemonAlreadyCaught } = useCatchPokemon(data);
+
 	return (
 		<Link to={`/pokemon/${pokemon.name}`}>
 			<div className="flex flex-col gap-3 rounded-xl shadow-lg p-6 cursor-pointer">
 				{isLoading ? (
 					<Loading size={200} />
 				) : (
-					<>
+					<div className="relative">
 						<img
-							className="opacity-70 w-[200px] h-[200px] hover:w-[210px] hover:h-[210px] hover:opacity-100 duration-200 ease-in-out"
+							className={`${
+								isPokemonAlreadyCaught ? 'opacity-100' : 'opacity-60'
+							} w-[200px] h-[200px] hover:w-[210px] hover:h-[210px] hover:opacity-100 duration-200 ease-in-out`}
 							src={data.sprites.other.dream_world.front_default}
 							alt={data.name}
 						/>
@@ -33,7 +41,13 @@ export default function PokemonCard({ pokemon }) {
 								Type(s): {data.types.map((type) => type?.type?.name).join(', ')}
 							</span>
 						</div>
-					</>
+
+						{isPokemonAlreadyCaught ? (
+							<div className="absolute top-2 -left-4 bg-blue-500 rounded-full">
+								<MdStar color="white" size={24} />
+							</div>
+						) : null}
+					</div>
 				)}
 			</div>
 		</Link>
