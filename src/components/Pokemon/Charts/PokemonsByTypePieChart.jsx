@@ -7,29 +7,16 @@ import {
 	ResponsiveContainer,
 	Tooltip,
 } from 'recharts';
-import _ from 'lodash';
 
 import Subtitle from '../../Typography/Subtitle';
 import ChartCard from './ChartCard';
 
 import { CHART_COLORS } from '../../../constants';
+import { getPokemonsByType } from '../../../utils/pokemon';
 
 export default function PokemonsByTypePieChart({ myPokemonsDetails }) {
 	const typePieChartData = useMemo(() => {
-		if (!myPokemonsDetails?.length) return [];
-
-		const allTypes = _.uniq(
-			myPokemonsDetails
-				.map(({ types }) => types.map(({ type }) => type.name))
-				.flat()
-		);
-
-		return allTypes.map((type) => ({
-			type,
-			quantity: myPokemonsDetails.filter((pokemon) =>
-				pokemon.types.some((innerType) => innerType.type.name === type)
-			).length,
-		}));
+		return getPokemonsByType(myPokemonsDetails);
 	}, [myPokemonsDetails]);
 
 	return (
@@ -45,7 +32,6 @@ export default function PokemonsByTypePieChart({ myPokemonsDetails }) {
 						cy="50%"
 						innerRadius={60}
 						outerRadius={80}
-						fill="#82ca9d"
 						label
 					>
 						{typePieChartData.map((type, i) => (
@@ -85,7 +71,7 @@ function CustomTooltip(props) {
 	const { name, value } = payload[0];
 
 	return (
-		<div className="flex gap-3 p-4 text-white font-bold uppercase bg-[rgba(1,1,1,0.3)]">
+		<div className="flex gap-3 p-4 text-white font-bold uppercase bg-[rgba(1,1,1,0.5)]">
 			<span className="">{name}:</span>
 			<span>{value}</span>
 		</div>

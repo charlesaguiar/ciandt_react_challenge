@@ -4,6 +4,8 @@ import { getMyPokemonsDetailsFromApi } from '../../../services/PokemonService';
 
 import Loading from '../../Loading';
 import Subtitle from '../../Typography/Subtitle';
+import MyPokemonsSummayTable from '../MyPokemonsSummayTable';
+import BestPokemonsPerStatBarChart from './BestPokemonsPerStatBarChart';
 import PokemonsByTypePieChart from './PokemonsByTypePieChart';
 
 export default function MyPokemonsCharts({ myPokemons }) {
@@ -19,8 +21,12 @@ export default function MyPokemonsCharts({ myPokemons }) {
 	return (
 		<>
 			<Subtitle>Charts</Subtitle>
-			<div className="flex w-full">
+			<div className="flex flex-col lg:flex-row gap-4 w-full">
 				<PokemonsByTypePieChart myPokemonsDetails={myPokemonsDetails} />
+				<BestPokemonsPerStatBarChart myPokemonsDetails={myPokemonsDetails} />
+			</div>
+			<div className="w-full">
+				<MyPokemonsSummayTable myPokemons={myPokemonsDetails} />
 			</div>
 		</>
 	);
