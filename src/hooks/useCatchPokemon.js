@@ -8,7 +8,7 @@ const useCatchPokemon = (pokemon) => {
 	const [trainer, setTrainer] = useLocalStorage(USER_LOCAL_STORAGE_KEY, null);
 
 	const handleCatchLeavePokemon = () => {
-		if (!trainer) return;
+		if (!trainer || !pokemon) return;
 		const trainerPokemonsIds = trainer.pokemonsIds || [];
 
 		try {
@@ -38,8 +38,8 @@ const useCatchPokemon = (pokemon) => {
 	};
 
 	const isPokemonAlreadyCaught = useMemo(() => {
-		return (trainer.pokemonsIds || []).includes(pokemon.id);
-	}, [trainer, pokemon.id]);
+		return (trainer.pokemonsIds || []).includes(pokemon?.id);
+	}, [trainer, pokemon?.id]);
 
 	return { handleCatchLeavePokemon, isPokemonAlreadyCaught };
 };
