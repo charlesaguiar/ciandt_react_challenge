@@ -1,7 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *,
 *::after,
 *::before {
 	box-sizing: border-box;
+}
+
+:root {
+	--navbar-height: 90px;
+	--active: #5c5ced;
+}
+
+body,
+#root {
+	min-height: 100vh;
+	min-width: 100%;
 }
 
 body {
@@ -9,4 +24,12 @@ body {
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.input-container:focus-within {
+	border: 2px solid var(--active);
+}
+
+.input-container:focus-within svg {
+	fill: var(--active);
 }
