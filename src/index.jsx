@@ -7,6 +7,7 @@ import App from './App';
 import AuthProvider from './contexts/AuthContext';
 
 import './index.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 const queryClient = new QueryClient({
 	defaultOptions: {

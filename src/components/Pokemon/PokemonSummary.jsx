@@ -3,6 +3,7 @@ import { MdCatchingPokemon } from 'react-icons/md';
 
 import useCatchPokemon from '../../hooks/useCatchPokemon';
 
+import Divider from '../Divider';
 import Title from '../Typography/Title';
 import Subtitle from '../Typography/Subtitle';
 
@@ -43,6 +44,11 @@ export default function PokemonSummary({ pokemon }) {
 					<MdCatchingPokemon className="animate-bounce" size={32} />
 				</button>
 			</div>
+
+			<div className="max-w-[100%] md:max-w-[80%]">
+				<Divider />
+			</div>
+
 			<div className="flex gap-2 flex-wrap mt-4">
 				{pokemon.types.map(({ type }) => (
 					<span

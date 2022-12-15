@@ -28,6 +28,7 @@ const useLocalStorage = (key, initialValue) => {
 			}
 		} catch (error) {
 			console.error('[USELOCALSTORAGE] Error: ', error);
+			throw error;
 		}
 	};
 
