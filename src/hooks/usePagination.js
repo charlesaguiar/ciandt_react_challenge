@@ -1,10 +1,9 @@
-import { useMemo } from 'react';
-import useLocalStorage from './useLocalStorage';
+import { useMemo, useState } from 'react';
 
 import { POKEMONS_PER_PAGE } from '../constants';
 
 const usePagination = (data = [], itemsPerPage = POKEMONS_PER_PAGE) => {
-	const [page, setPage] = useLocalStorage('home:current-page', 0);
+	const [page, setPage] = useState(0);
 
 	const paginatedData = useMemo(() => {
 		return data.slice(page * itemsPerPage, page * itemsPerPage + itemsPerPage);

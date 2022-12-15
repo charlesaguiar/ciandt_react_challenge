@@ -9,14 +9,14 @@ const useCatchPokemon = (pokemon) => {
 
 	const handleCatchLeavePokemon = () => {
 		if (!trainer || !pokemon) return;
-		const trainerPokemonsIds = trainer.pokemonsIds || [];
+		const trainerPokemonsNames = trainer.pokemonsNames || [];
 
 		try {
-			if (trainerPokemonsIds.includes(pokemon.id)) {
+			if (trainerPokemonsNames.includes(pokemon.name)) {
 				setTrainer((prevTrainer) => ({
 					...prevTrainer,
-					pokemonsIds: prevTrainer.pokemonsIds.filter(
-						(id) => id !== pokemon.id
+					pokemonsNames: prevTrainer.pokemonsNames.filter(
+						(name) => name !== pokemon.name
 					),
 				}));
 				displayToast(`You set ${pokemon.name.toUpperCase()} free!`, {
@@ -27,7 +27,7 @@ const useCatchPokemon = (pokemon) => {
 
 			setTrainer((prevTrainer) => ({
 				...prevTrainer,
-				pokemonsIds: [pokemon.id, ...(prevTrainer.pokemonsIds || [])],
+				pokemonsNames: [pokemon.name, ...(prevTrainer.pokemonsNames || [])],
 			}));
 			displayToast(`You caught ${pokemon.name.toUpperCase()}!`, {
 				type: 'success',
@@ -38,8 +38,8 @@ const useCatchPokemon = (pokemon) => {
 	};
 
 	const isPokemonAlreadyCaught = useMemo(() => {
-		return (trainer.pokemonsIds || []).includes(pokemon?.id);
-	}, [trainer, pokemon?.id]);
+		return (trainer.pokemonsNames || []).includes(pokemon?.name);
+	}, [trainer, pokemon?.name]);
 
 	return { handleCatchLeavePokemon, isPokemonAlreadyCaught };
 };

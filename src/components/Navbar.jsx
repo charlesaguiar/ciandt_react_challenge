@@ -1,5 +1,5 @@
 import Lottie from 'lottie-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { MdCatchingPokemon, MdOutlineLogout } from 'react-icons/md';
 
 import { useAuthContext } from '../contexts/AuthContext';
@@ -9,6 +9,7 @@ import Avatar from './Avatar';
 import IconButton from './IconButton';
 
 export default function Navbar() {
+	const navigate = useNavigate();
 	const { signOut } = useAuthContext();
 
 	return (
@@ -32,7 +33,7 @@ export default function Navbar() {
 				<div className="flex gap-4 items-center">
 					<IconButton
 						label="My Pokemons"
-						onClick={() => {}}
+						onClick={() => navigate('/my-pokemons')}
 						Icon={<MdCatchingPokemon size="24" />}
 					/>
 					<IconButton
