@@ -2,11 +2,13 @@ import { useCallback } from 'react';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import ReactPaginate from 'react-paginate';
 
+import { POKEMONS_PER_PAGE } from '../constants';
+
 export default function Pagination({
 	page,
 	setPage,
 	totalItems,
-	itemsPerPage = 20,
+	itemsPerPage = POKEMONS_PER_PAGE,
 	scrollToTopOnPageChange = true,
 }) {
 	const onPageChange = useCallback((newPage) => {

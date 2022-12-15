@@ -1,4 +1,5 @@
 import { createContext, useCallback, useContext, useMemo } from 'react';
+import { USER_LOCAL_STORAGE_KEY } from '../constants';
 
 import useLocalStorage from '../hooks/useLocalStorage';
 
@@ -10,7 +11,7 @@ export const useAuthContext = () => {
 };
 
 function AuthProvider({ children }) {
-	const [trainer, setTrainer] = useLocalStorage('poke:trainer', null);
+	const [trainer, setTrainer] = useLocalStorage(USER_LOCAL_STORAGE_KEY, null);
 
 	const signIn = useCallback((trainerName) => {
 		setTrainer({ name: trainerName });
