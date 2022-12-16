@@ -8,6 +8,7 @@ import Title from '../Typography/Title';
 import Subtitle from '../Typography/Subtitle';
 
 import { STATS_COLORS } from '../../constants';
+import ProgressBar from '../ProgressBar';
 
 export default function PokemonSummary({ pokemon }) {
 	const [showCatchLabel, setShowCatchLabel] = useState(false);
@@ -76,18 +77,12 @@ export default function PokemonSummary({ pokemon }) {
 				<Subtitle>Stats</Subtitle>
 				<div className="flex flex-col flex-wrap max-w-[100%] md:max-w-[80%]">
 					{pokemon.stats.map(({ stat, base_stat: baseStat }, i) => (
-						<>
-							<span className="mb-1">{stat?.name?.toUpperCase()}</span>
-							<div className="relative w-100 h-[8px] rounded-full border border-gray-300 mb-3">
-								<div
-									className="h-full"
-									style={{
-										width: `${Math.ceil(baseStat > 100 ? 100 : baseStat)}%`,
-										backgroundColor: STATS_COLORS[i],
-									}}
-								/>
-							</div>
-						</>
+						<ProgressBar
+							title={stat?.name}
+							value={baseStat}
+							color={STATS_COLORS[i]}
+							key={stat?.name}
+						/>
 					))}
 				</div>
 			</div>

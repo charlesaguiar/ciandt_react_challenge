@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export const getPokemonGalleryImages = (pokemon) => {
 	if (!pokemon) return [];
 
@@ -14,4 +16,56 @@ export const getPokemonGalleryImages = (pokemon) => {
 			url: sprites?.other[spriteKey]?.front_default,
 		})),
 	].filter((img) => Boolean(img.url));
+};
+
+export const getPokemonStats = (pokemonStats) => {
+	if (!pokemonStats?.length) return {};
+
+	return pokemonStats.reduce(
+		(acc, curr) => ({
+			...acc,
+			[curr.stat.name]: curr.base_stat,
+		}),
+		{}
+	);
+};
+
+export const getBestPokemonsPerStat = (myPokemonsDetails) => {
+	if (!myPokemonsDetails?.length) return [];
+
+	const allStats = _.uniq(
+		myPokemonsDetails
+			.map(({ stats }) => stats.map(({ stat }) => stat.name))
+			.flat()
+	);
+
+	const statsByPokemon = myPokemonsDetails.map((pokemon) => ({
+		name: pokemon.name,
+		...getPokemonStats(pokemon.stats),
+	}));
+
+	return allStats.map((stat) => {
+		const bestPokemonForStat = _.maxBy(statsByPokemon, stat);
+
+		return {
+			stat,
+			best: bestPokemonForStat[stat],
+			name: bestPokemonForStat.name,
+		};
+	});
+};
+
+export const getPokemonsByType = (pokemons) => {
+	if (!pokemons?.length) return [];
+
+	const allTypes = _.uniq(
+		pokemons.map(({ types }) => types.map(({ type }) => type.name)).flat()
+	);
+
+	return allTypes.map((type) => ({
+		type,
+		quantity: pokemons.filter((pokemon) =>
+			pokemon.types.some((innerType) => innerType.type.name === type)
+		).length,
+	}));
 };

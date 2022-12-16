@@ -26,6 +26,14 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+::-webkit-scrollbar {
+	width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+	@apply bg-gray-300 rounded-lg hover:bg-gray-500;
+}
+
 .scrollbar-hide::-webkit-scrollbar {
 	display: none;
 }

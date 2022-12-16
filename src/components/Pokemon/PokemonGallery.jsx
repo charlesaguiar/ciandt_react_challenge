@@ -1,4 +1,5 @@
-import { useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
+import _ from 'lodash';
 
 import Subtitle from '../Typography/Subtitle';
 import Carousel from '../Carousel';
@@ -10,11 +11,23 @@ export default function PokemonGallery({ pokemon }) {
 
 	const gallery = useMemo(() => {
 		if (!pokemon) return [];
-		return [
-			{ url: pokemon.sprites.other.dream_world.front_default },
-			...getPokemonGalleryImages(pokemon),
-		];
+		return _.uniqBy(
+			[
+				{ url: pokemon.sprites.other.dream_world.front_default },
+				...getPokemonGalleryImages(pokemon),
+			],
+			'url'
+		);
 	}, [pokemon]);
+
+	const getSelectedImageCssClasses = useCallback(
+		(index) => {
+			return index === selectedImageIndex
+				? 'border-2 border-blue-300 shadow-lg'
+				: '';
+		},
+		[selectedImageIndex]
+	);
 
 	return (
 		<>
@@ -29,7 +42,9 @@ export default function PokemonGallery({ pokemon }) {
 					<button
 						type="button"
 						onClick={() => setSelectedImageIndex(index)}
-						className="flex justify-center p-2 border border-gray-300 rounded-xl w-full min-w-[150px] max-h-[150px]"
+						className={`flex justify-center p-2 border border-gray-300 rounded-xl w-full min-w-[150px] max-h-[150px] ${getSelectedImageCssClasses(
+							index
+						)}`}
 						key={image.url}
 					>
 						<img

@@ -2,7 +2,7 @@ import { useQuery } from 'react-query';
 
 import { useAuthContext } from '../contexts/AuthContext';
 
-import getPokemonsDataFromApi from '../services/PokemonService';
+import { getPokemonsDataFromApi } from '../services/PokemonService';
 
 import Loading from '../components/Loading';
 import Title from '../components/Typography/Title';

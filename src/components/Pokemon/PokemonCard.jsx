@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import useCatchPokemon from '../../hooks/useCatchPokemon';
 
-import getPokemonsDataFromApi from '../../services/PokemonService';
+import { getPokemonsDataFromApi } from '../../services/PokemonService';
 
 import Divider from '../Divider';
 import Loading from '../Loading';

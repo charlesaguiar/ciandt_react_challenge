@@ -1,7 +1,7 @@
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 
-import getPokemonsDataFromApi from '../services/PokemonService';
+import { getPokemonsDataFromApi } from '../services/PokemonService';
 
 import Loading from '../components/Loading';
 import Breadcrumbs from '../components/Breadcrumbs';
