@@ -24,7 +24,7 @@ export default function Navbar() {
 							style={{ width: 50, height: 50 }}
 						/>
 						<img
-							className="w-[200px] h-full"
+							className="w-[200px] h-full hidden md:block"
 							src="img/pokedex_text.png"
 							alt="logo-pokedex-text"
 						/>

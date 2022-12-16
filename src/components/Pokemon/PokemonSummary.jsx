@@ -81,6 +81,7 @@ export default function PokemonSummary({ pokemon }) {
 							title={stat?.name}
 							value={baseStat}
 							color={STATS_COLORS[i]}
+							key={stat?.name}
 						/>
 					))}
 				</div>
