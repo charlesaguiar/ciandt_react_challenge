@@ -9,11 +9,13 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import PokemonsList from '../components/Pokemon/PokemonsList';
 import MyPokemonsCharts from '../components/Pokemon/Charts';
 
+import { MY_POKEMONS_QUERY_KEY } from '../constants';
+
 export default function MyPokemons() {
 	const { trainer } = useAuthContext();
 
 	const { isLoading, data: pokemonData } = useQuery({
-		queryKey: `my-pokemons`,
+		queryKey: MY_POKEMONS_QUERY_KEY,
 		queryFn: () => getPokemonsDataFromApi(),
 	});
 

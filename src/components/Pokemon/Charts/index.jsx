@@ -8,9 +8,11 @@ import MyPokemonsSummayTable from '../MyPokemonsSummayTable';
 import BestPokemonsPerStatBarChart from './BestPokemonsPerStatBarChart';
 import PokemonsByTypePieChart from './PokemonsByTypePieChart';
 
+import { MY_POKEMONS_DETAILS_QUERY_KEY } from '../../../constants';
+
 export default function MyPokemonsCharts({ myPokemons }) {
 	const { isLoading, data: myPokemonsDetails } = useQuery({
-		queryKey: `my-pokemons-details`,
+		queryKey: MY_POKEMONS_DETAILS_QUERY_KEY,
 		queryFn: () => getMyPokemonsDetailsFromApi(myPokemons),
 	});
 
