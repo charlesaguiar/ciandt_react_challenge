@@ -1,3 +1,7 @@
+export const MY_POKEMONS_DETAILS_QUERY_KEY = 'my-pokemons-details';
+export const POKEMONS_LIST_QUERY_KEY = 'pokemon-list';
+export const MY_POKEMONS_QUERY_KEY = 'my-pokemons';
+
 export const USER_LOCAL_STORAGE_KEY = 'poke:trainer';
 
 export const TOTAL_POKEMONS = 1154;
