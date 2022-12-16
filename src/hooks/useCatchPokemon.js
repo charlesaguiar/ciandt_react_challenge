@@ -1,10 +1,16 @@
 import { useMemo } from 'react';
+import { useQueryClient } from 'react-query';
+
 import useLocalStorage from './useLocalStorage';
 
-import { USER_LOCAL_STORAGE_KEY } from '../constants';
+import {
+	MY_POKEMONS_DETAILS_QUERY_KEY,
+	USER_LOCAL_STORAGE_KEY,
+} from '../constants';
 import { displayToast } from '../utils/toast';
 
 const useCatchPokemon = (pokemon) => {
+	const queryClient = useQueryClient();
 	const [trainer, setTrainer] = useLocalStorage(USER_LOCAL_STORAGE_KEY, null);
 
 	const handleCatchLeavePokemon = () => {
@@ -32,6 +38,8 @@ const useCatchPokemon = (pokemon) => {
 			displayToast(`You caught ${pokemon.name.toUpperCase()}!`, {
 				type: 'success',
 			});
+
+			queryClient.invalidateQueries([MY_POKEMONS_DETAILS_QUERY_KEY]);
 		} catch {
 			displayToast('There was an error! Please, try again.', { type: 'error' });
 		}

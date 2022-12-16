@@ -8,6 +8,8 @@ export const getPokemonsDataFromApi = (
 export const getMyPokemonsDetailsFromApi = (myPokemons) => {
 	if (!myPokemons?.length) return [];
 
+	console.log('FETCHING MY POKEMONS: ', { myPokemons });
+
 	const fetchPokemonsPromises = myPokemons.map((pokemon) =>
 		getPokemonsDataFromApi(pokemon.url)
 	);

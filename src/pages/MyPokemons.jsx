@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { useQuery } from 'react-query';
+import useLocalStorage from '../hooks/useLocalStorage';
 
-import { useAuthContext } from '../contexts/AuthContext';
 import { getPokemonsDataFromApi } from '../services/PokemonService';
 
 import Loading from '../components/Loading';
@@ -9,10 +9,10 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import PokemonsList from '../components/Pokemon/PokemonsList';
 import MyPokemonsCharts from '../components/Pokemon/Charts';
 
-import { MY_POKEMONS_QUERY_KEY } from '../constants';
+import { MY_POKEMONS_QUERY_KEY, USER_LOCAL_STORAGE_KEY } from '../constants';
 
 export default function MyPokemons() {
-	const { trainer } = useAuthContext();
+	const [trainer] = useLocalStorage(USER_LOCAL_STORAGE_KEY);
 
 	const { isLoading, data: pokemonData } = useQuery({
 		queryKey: MY_POKEMONS_QUERY_KEY,
