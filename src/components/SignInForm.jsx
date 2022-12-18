@@ -21,6 +21,7 @@ export default function SignInForm() {
 
 		signIn(trainerRef.current.value);
 	};
+
 	return (
 		<form
 			className="flex flex-col gap-8 min-w-[300px] max-w-[500px] md:min-w-[400px]"

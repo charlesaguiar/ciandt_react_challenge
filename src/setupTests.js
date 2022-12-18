@@ -1,4 +1,6 @@
 import '@testing-library/jest-dom';
+/* eslint-disable */
+import 'jest-canvas-mock';
 // const localStorageMock = (function () {
 // 	let store = {};
 
