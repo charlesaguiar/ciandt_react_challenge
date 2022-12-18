@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { POKEMONS_PER_PAGE } from 'constants';
+import { POKEMONS_PER_PAGE } from 'appConstants';
 
 const usePagination = (data = [], itemsPerPage = POKEMONS_PER_PAGE) => {
 	const [page, setPage] = useState(0);

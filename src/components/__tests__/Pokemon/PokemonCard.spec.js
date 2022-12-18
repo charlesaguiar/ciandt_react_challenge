@@ -5,7 +5,7 @@ import * as ReactQuery from 'react-query';
 import AuthProvider from 'contexts/AuthContext';
 import PokemonCard from 'components/Pokemon/PokemonCard';
 
-import { USER_LOCAL_STORAGE_KEY } from 'constants';
+import { USER_LOCAL_STORAGE_KEY } from 'appConstants';
 import { TEST_BLASTOISE, TEST_PIKACHU } from 'mocks';
 
 const useQuerySpy = jest.spyOn(ReactQuery, 'useQuery');

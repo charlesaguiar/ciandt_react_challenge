@@ -10,7 +10,7 @@ describe('[useSearch]', () => {
 
 	it('should render initial state', () => {
 		const { result } = renderHook(() => useSearch('name', data));
-		expect(result.current.query).toBe('');
+		expect(result.current.debouncedQuery).toBe('');
 		expect(result.current.setQuery instanceof Function).toBeTruthy();
 		expect(result.current.filteredData).toEqual(expect.arrayContaining(data));
 	});
@@ -23,7 +23,7 @@ describe('[useSearch]', () => {
 
 		// waits for debounced query to update
 		waitFor(() => {
-			expect(result.current.query).toBe(searchTerm);
+			expect(result.current.debouncedQuery).toBe(searchTerm);
 			expect(result.current.filteredData).toEqual(
 				expect.arrayContaining(
 					data.filter((item) => item.name.includes(searchTerm))

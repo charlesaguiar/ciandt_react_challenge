@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import AuthProvider from 'contexts/AuthContext';
-import { USER_LOCAL_STORAGE_KEY } from 'constants';
+import { USER_LOCAL_STORAGE_KEY } from 'appConstants';
 
 import SignInForm from '../SignInForm';
 

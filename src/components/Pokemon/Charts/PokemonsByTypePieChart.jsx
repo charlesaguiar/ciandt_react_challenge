@@ -8,7 +8,7 @@ import {
 	Tooltip,
 } from 'recharts';
 
-import { CHART_COLORS } from 'constants';
+import { CHART_COLORS } from 'appConstants';
 import { getPokemonsByType } from 'utils/pokemon';
 
 import Subtitle from 'components/Typography/Subtitle';

@@ -10,7 +10,7 @@ import {
 	CartesianGrid,
 } from 'recharts';
 
-import { CHART_COLORS } from 'constants';
+import { CHART_COLORS } from 'appConstants';
 import { getBestPokemonsPerStat } from 'utils/pokemon';
 
 import Subtitle from 'components/Typography/Subtitle';

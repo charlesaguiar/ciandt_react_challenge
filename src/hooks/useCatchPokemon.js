@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { USER_LOCAL_STORAGE_KEY } from 'constants';
+import { USER_LOCAL_STORAGE_KEY } from 'appConstants';
 import { displayToast } from 'utils/toast';
 
 import useLocalStorage from './useLocalStorage';

@@ -6,7 +6,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import AuthProvider from 'contexts/AuthContext';
 import PokemonSummary from 'components/Pokemon/PokemonSummary';
 
-import { USER_LOCAL_STORAGE_KEY } from 'constants';
+import { USER_LOCAL_STORAGE_KEY } from 'appConstants';
 import { TEST_BLASTOISE } from 'mocks';
 
 const renderComponent = (pokemon) => {

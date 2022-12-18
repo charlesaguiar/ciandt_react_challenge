@@ -7,7 +7,7 @@ import Input from 'components/Input';
 import Pagination from 'components/Pagination';
 import PokemonCard from 'components/Pokemon/PokemonCard';
 
-import { POKEMONS_PER_PAGE } from 'constants';
+import { POKEMONS_PER_PAGE } from 'appConstants';
 
 export default function PokemonsList({
 	pokemons,

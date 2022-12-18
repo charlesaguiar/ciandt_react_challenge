@@ -6,7 +6,7 @@ import * as ReactQuery from 'react-query';
 import AuthProvider from 'contexts/AuthContext';
 import PokemonsList from 'components/Pokemon/PokemonsList';
 
-import { USER_LOCAL_STORAGE_KEY } from 'constants';
+import { USER_LOCAL_STORAGE_KEY } from 'appConstants';
 import { TEST_PIKACHU } from 'mocks';
 
 const useQuerySpy = jest.spyOn(ReactQuery, 'useQuery');
@@ -74,6 +74,8 @@ describe('<PokemonsList />', () => {
 		const searchInput = screen.getByPlaceholderText('Search for pokemon name');
 		userEvent.type(searchInput, 'Blast');
 
-		expect(screen.getByText('No pokemons found')).toBeInTheDocument();
+		waitFor(() => {
+			expect(screen.getByText('No pokemons found')).toBeInTheDocument();
+		});
 	});
 });

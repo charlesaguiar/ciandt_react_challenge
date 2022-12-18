@@ -1,7 +1,7 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 
 import { TEST_PIKACHU } from 'mocks';
-import { USER_LOCAL_STORAGE_KEY } from 'constants';
+import { USER_LOCAL_STORAGE_KEY } from 'appConstants';
 
 import useCatchPokemon from '../useCatchPokemon';
 
