@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import useCatchPokemon from 'hooks/useCatchPokemon';
 import { getPokemonsDataFromApi } from 'services/PokemonService';
 
+import PlaceholderPokemonImage from 'assets/placeholder.png';
+
 import Divider from 'components/Divider';
 import Loading from 'components/Loading';
 
@@ -27,7 +29,10 @@ export default function PokemonCard({ pokemon }) {
 							className={`${
 								isPokemonAlreadyCaught ? 'opacity-100' : 'opacity-60'
 							} w-[200px] h-[200px] hover:w-[210px] hover:h-[210px] hover:opacity-100 duration-200 ease-in-out`}
-							src={data.sprites.other.dream_world.front_default}
+							src={
+								data.sprites.other.dream_world.front_default ||
+								PlaceholderPokemonImage
+							}
 							alt={data.name}
 						/>
 						<Divider />

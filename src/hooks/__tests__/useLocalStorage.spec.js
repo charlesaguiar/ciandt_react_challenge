@@ -1,5 +1,5 @@
 import { act, renderHook } from '@testing-library/react';
-import { USER_LOCAL_STORAGE_KEY } from 'constants';
+import { USER_LOCAL_STORAGE_KEY } from 'appConstants';
 
 import useLocalStorage from '../useLocalStorage';
 

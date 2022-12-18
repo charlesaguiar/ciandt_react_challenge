@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 import ProgressBar from 'components/ProgressBar';
 import Subtitle from 'components/Typography/Subtitle';
 
-import { STATS_COLORS } from 'constants';
+import { STATS_COLORS } from 'appConstants';
 
 const columnHelper = createColumnHelper();
 

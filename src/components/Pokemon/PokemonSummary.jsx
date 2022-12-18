@@ -8,7 +8,7 @@ import Title from 'components/Typography/Title';
 import Subtitle from 'components/Typography/Subtitle';
 import ProgressBar from 'components/ProgressBar';
 
-import { STATS_COLORS } from 'constants';
+import { STATS_COLORS } from 'appConstants';
 
 export default function PokemonSummary({ pokemon }) {
 	const [showCatchLabel, setShowCatchLabel] = useState(false);

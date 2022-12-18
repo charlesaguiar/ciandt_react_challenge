@@ -9,7 +9,7 @@ import Breadcrumbs from 'components/Breadcrumbs';
 import PokemonsList from 'components/Pokemon/PokemonsList';
 import MyPokemonsCharts from 'components/Pokemon/Charts';
 
-import { MY_POKEMONS_QUERY_KEY, USER_LOCAL_STORAGE_KEY } from 'constants';
+import { MY_POKEMONS_QUERY_KEY, USER_LOCAL_STORAGE_KEY } from 'appConstants';
 
 export default function MyPokemons() {
 	const [trainer] = useLocalStorage(USER_LOCAL_STORAGE_KEY);

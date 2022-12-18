@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { BrowserRouter as Router } from 'react-router-dom';
 import * as ReactQuery from 'react-query';
@@ -6,7 +6,7 @@ import * as ReactQuery from 'react-query';
 import AuthProvider from 'contexts/AuthContext';
 import PokemonsList from 'components/Pokemon/PokemonsList';
 
-import { USER_LOCAL_STORAGE_KEY } from 'constants';
+import { USER_LOCAL_STORAGE_KEY } from 'appConstants';
 import { TEST_PIKACHU } from 'mocks';
 
 const useQuerySpy = jest.spyOn(ReactQuery, 'useQuery');
@@ -39,10 +39,12 @@ describe('<PokemonsList />', () => {
 
 		renderComponent([{ url: TEST_PIKACHU.url }]);
 
-		expect(screen.getByText(TEST_PIKACHU.name)).toBeInTheDocument();
-		expect(
-			screen.getByPlaceholderText('Search for pokemon name')
-		).toBeInTheDocument();
+		waitFor(() => {
+			expect(screen.getByText(TEST_PIKACHU.name)).toBeInTheDocument();
+			expect(
+				screen.getByPlaceholderText('Search for pokemon name')
+			).toBeInTheDocument();
+		});
 	});
 
 	it('should behave properly for search WITH RESULTS', () => {
@@ -56,7 +58,9 @@ describe('<PokemonsList />', () => {
 		const searchInput = screen.getByPlaceholderText('Search for pokemon name');
 		userEvent.type(searchInput, 'Pi');
 
-		expect(screen.getByText(TEST_PIKACHU.name)).toBeInTheDocument();
+		waitFor(() => {
+			expect(screen.getByText(TEST_PIKACHU.name)).toBeInTheDocument();
+		});
 	});
 
 	it('should behave properly for search WITH NO RESULTS', () => {
@@ -70,6 +74,8 @@ describe('<PokemonsList />', () => {
 		const searchInput = screen.getByPlaceholderText('Search for pokemon name');
 		userEvent.type(searchInput, 'Blast');
 
-		expect(screen.getByText('No pokemons found')).toBeInTheDocument();
+		waitFor(() => {
+			expect(screen.getByText('No pokemons found')).toBeInTheDocument();
+		});
 	});
 });

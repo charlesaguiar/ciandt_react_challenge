@@ -1,7 +1,7 @@
 import { useQuery } from 'react-query';
 
 import { getMyPokemonsDetailsFromApi } from 'services/PokemonService';
-import { MY_POKEMONS_DETAILS_QUERY_KEY } from 'constants';
+import { MY_POKEMONS_DETAILS_QUERY_KEY } from 'appConstants';
 
 import Loading from 'components/Loading';
 import Subtitle from 'components/Typography/Subtitle';
