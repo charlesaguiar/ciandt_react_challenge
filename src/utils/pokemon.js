@@ -30,16 +30,14 @@ export const getPokemonStats = (pokemonStats) => {
 	);
 };
 
-export const getBestPokemonsPerStat = (myPokemonsDetails) => {
-	if (!myPokemonsDetails?.length) return [];
+export const getBestPokemonsPerStat = (pokemons) => {
+	if (!pokemons?.length) return [];
 
 	const allStats = _.uniq(
-		myPokemonsDetails
-			.map(({ stats }) => stats.map(({ stat }) => stat.name))
-			.flat()
+		pokemons.map(({ stats }) => stats.map(({ stat }) => stat.name)).flat()
 	);
 
-	const statsByPokemon = myPokemonsDetails.map((pokemon) => ({
+	const statsByPokemon = pokemons.map((pokemon) => ({
 		name: pokemon.name,
 		...getPokemonStats(pokemon.stats),
 	}));

@@ -43,7 +43,10 @@ export default function PokemonCard({ pokemon }) {
 						</div>
 
 						{isPokemonAlreadyCaught ? (
-							<div className="absolute top-2 -left-4 bg-blue-500 rounded-full">
+							<div
+								data-testid="my-pokemon-marker"
+								className="absolute top-2 -left-4 bg-blue-500 rounded-full"
+							>
 								<MdStar color="white" size={24} />
 							</div>
 						) : null}

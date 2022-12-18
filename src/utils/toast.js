@@ -1,6 +1,6 @@
 import { toast } from 'react-toastify';
 
-const DEFAULT_TOAST_PROPS = {
+export const DEFAULT_TOAST_PROPS = {
 	position: 'top-right',
 	autoClose: 5000,
 	hideProgressBar: false,

@@ -41,7 +41,7 @@ export default function PokemonsList({
 			<div className="flex flex-wrap gap-3 items-center justify-center w-full">
 				{paginatedData?.length ? (
 					paginatedData.map((pokemon) => (
-						<PokemonCard key={pokemon.name} pokemon={pokemon} />
+						<PokemonCard key={pokemon.url} pokemon={pokemon} />
 					))
 				) : (
 					<div>No pokemons found</div>
