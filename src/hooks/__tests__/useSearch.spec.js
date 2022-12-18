@@ -1,4 +1,4 @@
-import { act, renderHook } from '@testing-library/react';
+import { act, renderHook, waitFor } from '@testing-library/react';
 import useSearch from '../useSearch';
 
 describe('[useSearch]', () => {
@@ -21,11 +21,14 @@ describe('[useSearch]', () => {
 
 		act(() => result.current.setQuery(searchTerm));
 
-		expect(result.current.query).toBe(searchTerm);
-		expect(result.current.filteredData).toEqual(
-			expect.arrayContaining(
-				data.filter((item) => item.name.includes(searchTerm))
-			)
-		);
+		// waits for debounced query to update
+		waitFor(() => {
+			expect(result.current.query).toBe(searchTerm);
+			expect(result.current.filteredData).toEqual(
+				expect.arrayContaining(
+					data.filter((item) => item.name.includes(searchTerm))
+				)
+			);
+		});
 	});
 });

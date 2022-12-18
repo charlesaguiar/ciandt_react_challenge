@@ -1,17 +1,19 @@
 import { useState, useMemo } from 'react';
+import useDebounce from './useDebounce';
 
 const useSearch = (searchOnKey, data = []) => {
 	const [query, setQuery] = useState('');
+	const debouncedValue = useDebounce(query);
 
 	const filteredData = useMemo(() => {
-		if (!query) return data;
+		if (!debouncedValue) return data;
 
 		return data.filter((item) =>
-			item[searchOnKey].includes(query.toLowerCase())
+			item[searchOnKey].includes(debouncedValue.toLowerCase())
 		);
-	}, [query, data]);
+	}, [debouncedValue, data]);
 
-	return { query, setQuery, filteredData };
+	return { query: debouncedValue, setQuery, filteredData };
 };
 
 export default useSearch;
