@@ -40,6 +40,7 @@ export const TEST_BLASTOISE = {
 	id: 3,
 	url: 'https://pokeapi.co/api/v2/pokemon/3/',
 	name: 'blastoise',
+	abilities: [{ ability: { name: 'limber' } }],
 	types: [{ slot: 1, type: { name: 'water' } }],
 	stats: [
 		{ base_stat: 85, stat: { name: 'attack' } },
