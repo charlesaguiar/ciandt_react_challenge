@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { MdCatchingPokemon } from 'react-icons/md';
 
-import useCatchPokemon from '../../hooks/useCatchPokemon';
+import useCatchPokemon from 'hooks/useCatchPokemon';
 
-import Divider from '../Divider';
-import Title from '../Typography/Title';
-import Subtitle from '../Typography/Subtitle';
+import Divider from 'components/Divider';
+import Title from 'components/Typography/Title';
+import Subtitle from 'components/Typography/Subtitle';
+import ProgressBar from 'components/ProgressBar';
 
-import { STATS_COLORS } from '../../constants';
-import ProgressBar from '../ProgressBar';
+import { STATS_COLORS } from 'constants';
 
 export default function PokemonSummary({ pokemon }) {
 	const [showCatchLabel, setShowCatchLabel] = useState(false);

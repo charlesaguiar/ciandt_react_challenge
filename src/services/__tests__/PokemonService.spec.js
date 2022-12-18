@@ -1,13 +1,13 @@
 import axios from 'axios';
 import { when } from 'jest-when';
 
+import { TEST_PIKACHU, TEST_SQUIRTLE, TEST_BLASTOISE } from 'mocks';
+import { TOTAL_POKEMONS } from 'constants';
+
 import {
 	getPokemonsDataFromApi,
 	getMyPokemonsDetailsFromApi,
 } from '../PokemonService';
-
-import { TEST_PIKACHU, TEST_SQUIRTLE, TEST_BLASTOISE } from '../../mocks';
-import { TOTAL_POKEMONS } from '../../constants';
 
 jest.mock('axios');
 

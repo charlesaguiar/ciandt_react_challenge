@@ -1,5 +1,5 @@
 import Lottie from 'lottie-react';
-import Animation from '../assets/animations/ditto.json';
+import Animation from 'assets/animations/ditto.json';
 
 function Loading({ size = 40, loop = true }) {
 	const animationSize = size;

@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import AuthProvider from '../../contexts/AuthContext';
+import AuthProvider from 'contexts/AuthContext';
 import ProgressBar from '../ProgressBar';
 
 const renderComponent = (props) => {

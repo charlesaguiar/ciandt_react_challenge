@@ -1,4 +1,4 @@
-import Loading from './Loading';
+import Loading from 'components/Loading';
 
 const VARIANT_CLASSES = {
 	primary: 'bg-blue-500 text-white hover:bg-blue-800 disabled:bg-gray-200',

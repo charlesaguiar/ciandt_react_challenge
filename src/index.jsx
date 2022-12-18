@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import AuthProvider from 'contexts/AuthContext';
 
 import App from './App';
-
-import AuthProvider from './contexts/AuthContext';
 
 import './index.css';
 import 'react-toastify/dist/ReactToastify.css';

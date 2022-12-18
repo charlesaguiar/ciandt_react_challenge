@@ -1,6 +1,5 @@
 import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
-
-import useCarousel from '../hooks/useCarousel';
+import useCarousel from 'hooks/useCarousel';
 
 function Carousel({ children }) {
 	const {

@@ -1,14 +1,14 @@
 import { useQuery } from 'react-query';
 
-import { useAuthContext } from '../contexts/AuthContext';
+import { useAuthContext } from 'contexts/AuthContext';
 
-import { getPokemonsDataFromApi } from '../services/PokemonService';
+import { getPokemonsDataFromApi } from 'services/PokemonService';
 
-import Loading from '../components/Loading';
-import Title from '../components/Typography/Title';
-import PokemonsList from '../components/Pokemon/PokemonsList';
+import Loading from 'components/Loading';
+import Title from 'components/Typography/Title';
+import PokemonsList from 'components/Pokemon/PokemonsList';
 
-import { POKEMONS_LIST_QUERY_KEY } from '../constants';
+import { POKEMONS_LIST_QUERY_KEY } from 'constants';
 
 export default function Home() {
 	const { trainer } = useAuthContext();

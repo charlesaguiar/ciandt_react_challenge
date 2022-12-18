@@ -3,11 +3,11 @@ import userEvent from '@testing-library/user-event';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import AuthProvider from '../../../contexts/AuthContext';
-import PokemonSummary from '../../Pokemon/PokemonSummary';
+import AuthProvider from 'contexts/AuthContext';
+import PokemonSummary from 'components/Pokemon/PokemonSummary';
 
-import { USER_LOCAL_STORAGE_KEY } from '../../../constants';
-import { TEST_BLASTOISE } from '../../../mocks';
+import { USER_LOCAL_STORAGE_KEY } from 'constants';
+import { TEST_BLASTOISE } from 'mocks';
 
 const renderComponent = (pokemon) => {
 	const queryClient = new QueryClient();

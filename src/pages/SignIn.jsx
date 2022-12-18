@@ -1,5 +1,5 @@
-import SignInForm from '../components/SignInForm';
-import SignInHeader from '../components/SignInHeader';
+import SignInForm from 'components/SignInForm';
+import SignInHeader from 'components/SignInHeader';
 
 export default function SignIn() {
 	return (

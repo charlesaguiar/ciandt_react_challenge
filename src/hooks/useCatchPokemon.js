@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 
-import useLocalStorage from './useLocalStorage';
+import { USER_LOCAL_STORAGE_KEY } from 'constants';
+import { displayToast } from 'utils/toast';
 
-import { USER_LOCAL_STORAGE_KEY } from '../constants';
-import { displayToast } from '../utils/toast';
+import useLocalStorage from './useLocalStorage';
 
 const useCatchPokemon = (pokemon) => {
 	const [trainer, setTrainer] = useLocalStorage(USER_LOCAL_STORAGE_KEY, null);

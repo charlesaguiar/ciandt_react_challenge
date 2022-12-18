@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
-
 import { act, renderHook } from '@testing-library/react';
+
 import usePagination from '../usePagination';
 
 function createRandomUsers(length) {

@@ -1,14 +1,14 @@
 import { useQuery } from 'react-query';
 
-import { getMyPokemonsDetailsFromApi } from '../../../services/PokemonService';
+import { getMyPokemonsDetailsFromApi } from 'services/PokemonService';
+import { MY_POKEMONS_DETAILS_QUERY_KEY } from 'constants';
 
-import Loading from '../../Loading';
-import Subtitle from '../../Typography/Subtitle';
-import MyPokemonsSummayTable from '../MyPokemonsSummayTable';
+import Loading from 'components/Loading';
+import Subtitle from 'components/Typography/Subtitle';
+import MyPokemonsSummayTable from 'components/Pokemon/MyPokemonsSummayTable';
+
 import BestPokemonsPerStatBarChart from './BestPokemonsPerStatBarChart';
 import PokemonsByTypePieChart from './PokemonsByTypePieChart';
-
-import { MY_POKEMONS_DETAILS_QUERY_KEY } from '../../../constants';
 
 export default function MyPokemonsCharts({ myPokemons }) {
 	const { isLoading, data: myPokemonsDetails } = useQuery({

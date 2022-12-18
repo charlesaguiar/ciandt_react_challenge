@@ -1,15 +1,15 @@
 import { useState } from 'react';
+import { displayToast } from 'utils/toast';
 
 const useLocalStorage = (key, initialValue) => {
 	const [storedValue, setStoredValue] = useState(() => {
-		/* prevents from crashing if not running on a browser */
 		if (!window) return initialValue;
 
 		try {
 			const item = window.localStorage.getItem(key);
 			return item ? JSON.parse(item) : initialValue;
 		} catch (error) {
-			console.error('[USELOCALSTORAGE] Error gay: ', error);
+			displayToast('Error on recovering data', { type: 'error' });
 			return initialValue;
 		}
 	});
@@ -27,7 +27,7 @@ const useLocalStorage = (key, initialValue) => {
 				);
 			}
 		} catch (error) {
-			console.error('[USELOCALSTORAGE] Error: ', error);
+			displayToast('Error on setting data', { type: 'error' });
 			throw error;
 		}
 	};

@@ -3,11 +3,11 @@ import userEvent from '@testing-library/user-event';
 import { BrowserRouter as Router } from 'react-router-dom';
 import * as ReactQuery from 'react-query';
 
-import AuthProvider from '../../../contexts/AuthContext';
-import PokemonsList from '../../Pokemon/PokemonsList';
+import AuthProvider from 'contexts/AuthContext';
+import PokemonsList from 'components/Pokemon/PokemonsList';
 
-import { USER_LOCAL_STORAGE_KEY } from '../../../constants';
-import { TEST_PIKACHU } from '../../../mocks';
+import { USER_LOCAL_STORAGE_KEY } from 'constants';
+import { TEST_PIKACHU } from 'mocks';
 
 const useQuerySpy = jest.spyOn(ReactQuery, 'useQuery');
 

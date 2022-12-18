@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react';
-import useLocalStorage from '../useLocalStorage';
+import { USER_LOCAL_STORAGE_KEY } from 'constants';
 
-import { USER_LOCAL_STORAGE_KEY } from '../../constants';
+import useLocalStorage from '../useLocalStorage';
 
 describe('[useLocalStorage]', () => {
 	const value = { name: 'John Doe' };

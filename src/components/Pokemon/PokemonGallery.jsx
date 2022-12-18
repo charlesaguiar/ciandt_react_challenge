@@ -1,10 +1,10 @@
 import { useCallback, useMemo, useState } from 'react';
 import _ from 'lodash';
 
-import Subtitle from '../Typography/Subtitle';
-import Carousel from '../Carousel';
+import Subtitle from 'components/Typography/Subtitle';
+import Carousel from 'components/Carousel';
 
-import { getPokemonGalleryImages } from '../../utils/pokemon';
+import { getPokemonGalleryImages } from 'utils/pokemon';
 
 export default function PokemonGallery({ pokemon }) {
 	const [selectedImageIndex, setSelectedImageIndex] = useState(0);
