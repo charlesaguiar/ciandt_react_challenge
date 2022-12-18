@@ -5,6 +5,7 @@ export default function ProgressBar({ title, value, color }) {
 			<div className="relative w-100 h-[8px] rounded-full border border-gray-300 mb-3">
 				<div
 					className="h-full"
+					data-testid="progress-bar"
 					style={{
 						width: `${Math.ceil(value > 100 ? 100 : value)}%`,
 						backgroundColor: color,
