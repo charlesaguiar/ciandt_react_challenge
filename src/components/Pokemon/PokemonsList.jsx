@@ -1,13 +1,13 @@
 import { MdSearch } from 'react-icons/md';
 
-import usePagination from '../../hooks/usePagination';
-import useSearch from '../../hooks/useSearch';
+import usePagination from 'hooks/usePagination';
+import useSearch from 'hooks/useSearch';
 
-import Input from '../Input';
-import Pagination from '../Pagination';
-import PokemonCard from './PokemonCard';
+import Input from 'components/Input';
+import Pagination from 'components/Pagination';
+import PokemonCard from 'components/Pokemon/PokemonCard';
 
-import { POKEMONS_PER_PAGE } from '../../constants';
+import { POKEMONS_PER_PAGE } from 'constants';
 
 export default function PokemonsList({
 	pokemons,

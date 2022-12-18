@@ -2,11 +2,11 @@ import { render, screen } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import * as ReactQuery from 'react-query';
 
-import AuthProvider from '../../../contexts/AuthContext';
-import PokemonCard from '../../Pokemon/PokemonCard';
+import AuthProvider from 'contexts/AuthContext';
+import PokemonCard from 'components/Pokemon/PokemonCard';
 
-import { USER_LOCAL_STORAGE_KEY } from '../../../constants';
-import { TEST_BLASTOISE, TEST_PIKACHU } from '../../../mocks';
+import { USER_LOCAL_STORAGE_KEY } from 'constants';
+import { TEST_BLASTOISE, TEST_PIKACHU } from 'mocks';
 
 const useQuerySpy = jest.spyOn(ReactQuery, 'useQuery');
 

@@ -2,12 +2,11 @@ import { MdStar } from 'react-icons/md';
 import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
 
-import useCatchPokemon from '../../hooks/useCatchPokemon';
+import useCatchPokemon from 'hooks/useCatchPokemon';
+import { getPokemonsDataFromApi } from 'services/PokemonService';
 
-import { getPokemonsDataFromApi } from '../../services/PokemonService';
-
-import Divider from '../Divider';
-import Loading from '../Loading';
+import Divider from 'components/Divider';
+import Loading from 'components/Loading';
 
 export default function PokemonCard({ pokemon }) {
 	const { isLoading, data } = useQuery({

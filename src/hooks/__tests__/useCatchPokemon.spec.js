@@ -1,8 +1,9 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
-import useCatchPokemon from '../useCatchPokemon';
 
-import { TEST_PIKACHU } from '../../mocks';
-import { USER_LOCAL_STORAGE_KEY } from '../../constants';
+import { TEST_PIKACHU } from 'mocks';
+import { USER_LOCAL_STORAGE_KEY } from 'constants';
+
+import useCatchPokemon from '../useCatchPokemon';
 
 describe('[useCatchPokemon]', () => {
 	beforeEach(() => {

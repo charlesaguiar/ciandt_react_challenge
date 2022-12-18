@@ -2,11 +2,11 @@ import Lottie from 'lottie-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { MdCatchingPokemon, MdOutlineLogout } from 'react-icons/md';
 
-import { useAuthContext } from '../contexts/AuthContext';
+import { useAuthContext } from 'contexts/AuthContext';
 
-import AnimationPokeball from '../assets/animations/pokeball.json';
-import Avatar from './Avatar';
-import IconButton from './IconButton';
+import AnimationPokeball from 'assets/animations/pokeball.json';
+import Avatar from 'components/Avatar';
+import IconButton from 'components/IconButton';
 
 export default function Navbar() {
 	const navigate = useNavigate();

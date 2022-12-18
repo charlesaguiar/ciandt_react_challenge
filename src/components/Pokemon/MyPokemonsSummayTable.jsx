@@ -9,10 +9,10 @@ import {
 } from '@tanstack/react-table';
 import { useNavigate } from 'react-router-dom';
 
-import ProgressBar from '../ProgressBar';
-import Subtitle from '../Typography/Subtitle';
+import ProgressBar from 'components/ProgressBar';
+import Subtitle from 'components/Typography/Subtitle';
 
-import { STATS_COLORS } from '../../constants';
+import { STATS_COLORS } from 'constants';
 
 const columnHelper = createColumnHelper();
 

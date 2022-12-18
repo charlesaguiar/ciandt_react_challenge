@@ -2,9 +2,10 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { USER_LOCAL_STORAGE_KEY } from '../../constants';
 
-import AuthProvider from '../../contexts/AuthContext';
+import { USER_LOCAL_STORAGE_KEY } from 'constants';
+import AuthProvider from 'contexts/AuthContext';
+
 import Navbar from '../Navbar';
 
 const mockNavigate = jest.fn();

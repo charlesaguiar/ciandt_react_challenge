@@ -1,4 +1,4 @@
-import { TEST_PIKACHU, TEST_SQUIRTLE, TEST_BLASTOISE } from '../../mocks';
+import { TEST_PIKACHU, TEST_SQUIRTLE, TEST_BLASTOISE } from 'mocks';
 import {
 	getPokemonGalleryImages,
 	getPokemonStats,

@@ -4,13 +4,37 @@
 		"es2021": true,
 		"jest": true
 	},
-	"extends": ["plugin:react/recommended", "airbnb", "prettier"],
+	"extends": [
+		"plugin:react/recommended",
+		"airbnb",
+		"prettier",
+		"plugin:import/react"
+	],
 	"overrides": [],
+	"parser": "@babel/eslint-parser",
 	"parserOptions": {
 		"ecmaVersion": "latest",
-		"sourceType": "module"
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"requireConfigFile": false,
+		"babelOptions": {
+			"presets": ["@babel/preset-react"]
+		}
 	},
-	"plugins": ["react", "prettier"],
+	"plugins": ["react", "prettier", "import"],
+	"settings": {
+		"react": {
+			"version": "detect"
+		},
+		"import/resolver": {
+			"node": {
+				"extensions": [".js", ".jsx"],
+				"moduleDirectory": ["node_modules", "src"]
+			}
+		}
+	},
 	"ignorePatterns": ["*.test.js", "*.test.tsx"],
 	"rules": {
 		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
@@ -22,6 +46,7 @@
 		"no-irregular-whitespace": "off",
 		"import/prefer-default-export": "off",
 		"no-param-reassign": "off",
-		"jsx-a11y/click-events-have-key-events": "off"
+		"jsx-a11y/click-events-have-key-events": "off",
+		"import/no-unresolved": ["error", { "commonjs": true, "amd": true }]
 	}
 }

@@ -5,13 +5,13 @@ import {
 	Route,
 	Navigate,
 } from 'react-router-dom';
-import { useAuthContext } from './contexts/AuthContext';
+import { useAuthContext } from 'contexts/AuthContext';
 
-import Layout from './layouts/Layout';
-import Home from './pages/Home';
-import PokemonDetails from './pages/PokemonDetails';
-import SignIn from './pages/SignIn';
-import MyPokemons from './pages/MyPokemons';
+import Layout from 'layouts/Layout';
+import Home from 'pages/Home';
+import PokemonDetails from 'pages/PokemonDetails';
+import SignIn from 'pages/SignIn';
+import MyPokemons from 'pages/MyPokemons';
 
 function App() {
 	const { isAuthenticated } = useAuthContext();

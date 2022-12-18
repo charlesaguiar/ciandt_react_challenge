@@ -10,11 +10,11 @@ import {
 	CartesianGrid,
 } from 'recharts';
 
-import Subtitle from '../../Typography/Subtitle';
-import ChartCard from './ChartCard';
+import { CHART_COLORS } from 'constants';
+import { getBestPokemonsPerStat } from 'utils/pokemon';
 
-import { CHART_COLORS } from '../../../constants';
-import { getBestPokemonsPerStat } from '../../../utils/pokemon';
+import Subtitle from 'components/Typography/Subtitle';
+import ChartCard from './ChartCard';
 
 export default function BestPokemonsPerStatBarChart({ myPokemonsDetails }) {
 	const statsBarChartData = useMemo(() => {

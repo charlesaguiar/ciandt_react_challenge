@@ -1,9 +1,9 @@
 import { useRef } from 'react';
 import Lottie from 'lottie-react';
 
-import AnimationPokeball from '../assets/animations/pokeball.json';
-import AnimationSquirtle from '../assets/animations/squirtle-loading.json';
-import AnimationDiglett from '../assets/animations/diglett.json';
+import AnimationPokeball from 'assets/animations/pokeball.json';
+import AnimationSquirtle from 'assets/animations/squirtle-loading.json';
+import AnimationDiglett from 'assets/animations/diglett.json';
 
 const AnimationsList = [AnimationDiglett, AnimationSquirtle, AnimationPokeball];
 const randomAnimationIndex = Math.floor(Math.random() * AnimationsList.length);

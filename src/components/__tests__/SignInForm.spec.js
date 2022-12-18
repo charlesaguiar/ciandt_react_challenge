@@ -3,10 +3,10 @@ import userEvent from '@testing-library/user-event';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import AuthProvider from '../../contexts/AuthContext';
-import SignInForm from '../SignInForm';
+import AuthProvider from 'contexts/AuthContext';
+import { USER_LOCAL_STORAGE_KEY } from 'constants';
 
-import { USER_LOCAL_STORAGE_KEY } from '../../constants';
+import SignInForm from '../SignInForm';
 
 const renderComponent = () => {
 	const queryClient = new QueryClient();

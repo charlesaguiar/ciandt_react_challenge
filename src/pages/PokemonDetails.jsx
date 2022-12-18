@@ -1,12 +1,12 @@
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 
-import { getPokemonsDataFromApi } from '../services/PokemonService';
+import { getPokemonsDataFromApi } from 'services/PokemonService';
 
-import Loading from '../components/Loading';
-import Breadcrumbs from '../components/Breadcrumbs';
-import PokemonGallery from '../components/Pokemon/PokemonGallery';
-import PokemonSummary from '../components/Pokemon/PokemonSummary';
+import Loading from 'components/Loading';
+import Breadcrumbs from 'components/Breadcrumbs';
+import PokemonGallery from 'components/Pokemon/PokemonGallery';
+import PokemonSummary from 'components/Pokemon/PokemonSummary';
 
 const API_BASE_URL = process.env.REACT_APP_POKEAPI_BASE_URL;
 
