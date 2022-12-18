@@ -9,7 +9,7 @@ const useLocalStorage = (key, initialValue) => {
 			const item = window.localStorage.getItem(key);
 			return item ? JSON.parse(item) : initialValue;
 		} catch (error) {
-			console.error('[USELOCALSTORAGE] Error: ', error);
+			console.error('[USELOCALSTORAGE] Error gay: ', error);
 			return initialValue;
 		}
 	});
