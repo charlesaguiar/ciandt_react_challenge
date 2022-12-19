@@ -6,7 +6,7 @@ This app is an implementation of a Pokédex using React and Poke API (https://po
 
 ## Running the project
 
-- Clone this repo in tour local machine by running
+- Clone this repo in your local machine by running
 
 `git clone https://github.com/charlesaguiar/ciandt_react_challenge.git`
 
@@ -24,7 +24,7 @@ This project uses ESLINT and Prettier to provide code formatting. You can run `n
 
 ### Unit testing
 
-This project uses Jest alongside with react-testing-library for unit testing. Run
+This project uses Jest alongside with react-testing-library (RTL) for unit testing. Run
 
 `npm run test`
 
